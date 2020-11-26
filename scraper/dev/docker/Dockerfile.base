@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 LABEL maintainer="docsearch@algolia.com"
 
-WORKDIR /root
+WORKDIR /
 
 # Install selenium
 ENV LC_ALL C
@@ -43,7 +43,6 @@ RUN CHROME_VERSION=$(google-chrome --version | grep -oE "[0-9.]{9}") && \
 RUN unzip chromedriver_linux64.zip
 
 RUN mv chromedriver /usr/bin/chromedriver
-RUN chown root:root /usr/bin/chromedriver
 RUN chmod +x /usr/bin/chromedriver
 
 RUN wget -q https://selenium-release.storage.googleapis.com/3.13/selenium-server-standalone-3.13.0.jar

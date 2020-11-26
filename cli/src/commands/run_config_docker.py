@@ -62,7 +62,7 @@ class RunConfigDocker(AbstractCommand):
 
         if from_local_code:
             run_command.append("-v")
-            run_command.append(os.getcwd() + "/scraper/src:/root/src")
+            run_command.append(os.getcwd() + "/scraper/src:/src")
 
         run_command = run_command + ["--name",
                                      container_name,
